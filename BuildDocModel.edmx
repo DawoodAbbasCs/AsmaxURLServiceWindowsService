@@ -1,0 +1,106 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="FulfillmentTestModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="EDocLibraryTemplate">
+          <Key>
+            <PropertyRef Name="docID" />
+          </Key>
+          <Property Name="docID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="docPassword" Type="uniqueidentifier" />
+          <Property Name="docName" Type="nvarchar" MaxLength="127" />
+          <Property Name="docDescription" Type="nvarchar(max)" />
+          <Property Name="docCategory" Type="nvarchar" MaxLength="127" />
+          <Property Name="isActive" Type="bit" />
+          <Property Name="docPageCount" Type="smallint" />
+          <Property Name="docWidth" Type="decimal" Precision="10" Scale="4" />
+          <Property Name="docHeight" Type="decimal" Precision="10" Scale="4" />
+          <Property Name="docBleed" Type="decimal" Precision="8" Scale="3" />
+          <Property Name="clientType" Type="tinyint" />
+          <Property Name="userID" Type="smallint" />
+          <Property Name="fullScreenWindow" Type="tinyint" />
+          <Property Name="instanceId" Type="tinyint" />
+        </EntityType>
+        <EntityContainer Name="FulfillmentTestModelStoreContainer">
+          <EntitySet Name="EDocLibraryTemplate" EntityType="Self.EDocLibraryTemplate" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="FulfillmentTestModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="EDocLibraryTemplate">
+          <Key>
+            <PropertyRef Name="docID" />
+          </Key>
+          <Property Name="docID" Type="Guid" Nullable="false" />
+          <Property Name="docPassword" Type="Guid" />
+          <Property Name="docName" Type="String" MaxLength="127" FixedLength="false" Unicode="true" />
+          <Property Name="docDescription" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="docCategory" Type="String" MaxLength="127" FixedLength="false" Unicode="true" />
+          <Property Name="isActive" Type="Boolean" />
+          <Property Name="docPageCount" Type="Int16" />
+          <Property Name="docWidth" Type="Decimal" Precision="10" Scale="4" />
+          <Property Name="docHeight" Type="Decimal" Precision="10" Scale="4" />
+          <Property Name="docBleed" Type="Decimal" Precision="8" Scale="3" />
+          <Property Name="clientType" Type="Byte" />
+          <Property Name="userID" Type="Int16" />
+          <Property Name="fullScreenWindow" Type="Byte" />
+          <Property Name="instanceId" Type="Byte" />
+        </EntityType>
+        <EntityContainer Name="FulfillmentTestEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="EDocLibraryTemplates" EntityType="Self.EDocLibraryTemplate" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="FulfillmentTestModelStoreContainer" CdmEntityContainer="FulfillmentTestEntities">
+          <EntitySetMapping Name="EDocLibraryTemplates">
+            <EntityTypeMapping TypeName="FulfillmentTestModel.EDocLibraryTemplate">
+              <MappingFragment StoreEntitySet="EDocLibraryTemplate">
+                <ScalarProperty Name="docID" ColumnName="docID" />
+                <ScalarProperty Name="docPassword" ColumnName="docPassword" />
+                <ScalarProperty Name="docName" ColumnName="docName" />
+                <ScalarProperty Name="docDescription" ColumnName="docDescription" />
+                <ScalarProperty Name="docCategory" ColumnName="docCategory" />
+                <ScalarProperty Name="isActive" ColumnName="isActive" />
+                <ScalarProperty Name="docPageCount" ColumnName="docPageCount" />
+                <ScalarProperty Name="docWidth" ColumnName="docWidth" />
+                <ScalarProperty Name="docHeight" ColumnName="docHeight" />
+                <ScalarProperty Name="docBleed" ColumnName="docBleed" />
+                <ScalarProperty Name="clientType" ColumnName="clientType" />
+                <ScalarProperty Name="userID" ColumnName="userID" />
+                <ScalarProperty Name="fullScreenWindow" ColumnName="fullScreenWindow" />
+                <ScalarProperty Name="instanceId" ColumnName="instanceId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
